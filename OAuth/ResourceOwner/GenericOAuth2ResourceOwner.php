@@ -32,7 +32,7 @@ class GenericOAuth2ResourceOwner extends AbstractResourceOwner
     {
         $url = $this->getOption('infos_url');
         $url .= (false !== strpos($url, '?') ? '&' : '?').http_build_query(array(
-            'access_token' => $accessToken
+            'oauth_token' => $accessToken
         ));
 
         $content = $this->doGetUserInformationRequest($url)->getContent();
